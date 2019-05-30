@@ -1,0 +1,108 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Base ingredient #<%= @base_ingredient.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/base_ingredients" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <div class="col">
+        <a href="/base_ingredients/<%= @base_ingredient.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit base ingredient
+        </a>
+      </div>
+
+      <div class="col">
+        <a href="/delete_base_ingredient/<%= @base_ingredient.id %>" class="btn btn-block btn-outline-secondary">
+          Delete base ingredient
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Name
+      </dt>
+      <dd>
+        <%= @base_ingredient.name %>
+      </dd>
+
+      <dt>
+        Calories
+      </dt>
+      <dd>
+        <%= @base_ingredient.calories %>
+      </dd>
+
+      <dt>
+        Proteins
+      </dt>
+      <dd>
+        <%= @base_ingredient.proteins %>
+      </dd>
+
+      <dt>
+        Fats
+      </dt>
+      <dd>
+        <%= @base_ingredient.fats %>
+      </dd>
+
+      <dt>
+        Carbohydrates
+      </dt>
+      <dd>
+        <%= @base_ingredient.carbohydrates %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@base_ingredient.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@base_ingredient.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <%= render partial: "base_ingredient_templates/base_ingredient_recipes" %>
+  </div>
+</div>
+
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <%= render partial: "base_ingredient_templates/base_ingredient_recip2" %>
+  </div>
+</div>
+
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <%= render partial: "base_ingredient_templates/base_ingredient_recip3" %>
+  </div>
+</div>
+
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <%= render partial: "base_ingredient_templates/base_ingredient_recip4" %>
+  </div>
+</div>
+
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <%= render partial: "base_ingredient_templates/base_ingredient_recip5" %>
+  </div>
+</div>
