@@ -1,0 +1,35 @@
+<% if @meal.errors.any? %>
+  <% @meal.errors.full_messages.each do |message| %>
+    <div class="alert">
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<h1>
+  Edit meal #<%= @meal.id %>
+</h1>
+
+<hr>
+
+<form action="/update_meal/<%= @meal.id %>" method="post">
+
+
+  <div class="form-group">
+    <label for="food">
+      Food
+    </label>
+
+    <%= select_tag(:food, options_from_collection_for_select(Recipe.all, :id, :ingredient1, @meal.food), :class => "form-control") %>
+  </div>
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update meal
+  </button>
+</form>
+
+<hr>
+
+<a href="/meals">
+  Go back
+</a>

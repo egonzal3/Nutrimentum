@@ -1,0 +1,113 @@
+<div class="row mb-3">
+  <div class="col-md-12">
+    <h1>
+      All base ingredients
+    </h1>
+
+    <a href="/base_ingredients/new" class="btn btn-block btn-outline-secondary">
+      Add a new base ingredient
+    </a>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-3">
+    <%= render partial: "base_ingredient_templates/base_ingredients_search_form" %>
+  </div>
+</div>
+
+
+
+<hr>
+
+<div class="row mb-3">
+  <div class="col-md-12">
+    <table class="table">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Name
+        </th>
+
+        <th>
+          Calories
+        </th>
+
+        <th>
+          Proteins
+        </th>
+
+        <th>
+          Fats
+        </th>
+
+        <th>
+          Carbohydrates
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @base_ingredients.each do |base_ingredient| %>
+      <tr>
+        <td>
+          <%= base_ingredient.id %>
+        </td>
+
+        <td>
+          <%= base_ingredient.name %>
+        </td>
+
+        <td>
+          <%= base_ingredient.calories %>
+        </td>
+
+        <td>
+          <%= base_ingredient.proteins %>
+        </td>
+
+        <td>
+          <%= base_ingredient.fats %>
+        </td>
+
+        <td>
+          <%= base_ingredient.carbohydrates %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(base_ingredient.created_at) %> ago
+        </td>
+
+        <td>
+          <%= time_ago_in_words(base_ingredient.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/base_ingredients/<%= base_ingredient.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+
+    <div class="row mb-3">
+      <div class="col-md-12">
+        <%= paginate @base_ingredients, theme: "twitter-bootstrap-4" %>
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,66 @@
+<% if @base_ingredient.errors.any? %>
+  <% @base_ingredient.errors.full_messages.each do |message| %>
+    <div class="alert">
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<h1>
+  Edit base ingredient #<%= @base_ingredient.id %>
+</h1>
+
+<hr>
+
+<form action="/update_base_ingredient/<%= @base_ingredient.id %>" method="post">
+
+  <div class="form-group">
+    <label for="name">
+      Name
+    </label>
+
+    <input type="text" id="name" name="name" class="form-control" value="<%= @base_ingredient.name %>">
+  </div>
+
+  <div class="form-group">
+    <label for="calories">
+      Calories
+    </label>
+
+    <input type="text" id="calories" name="calories" class="form-control" value="<%= @base_ingredient.calories %>">
+  </div>
+
+  <div class="form-group">
+    <label for="proteins">
+      Proteins
+    </label>
+
+    <input type="text" id="proteins" name="proteins" class="form-control" value="<%= @base_ingredient.proteins %>">
+  </div>
+
+  <div class="form-group">
+    <label for="fats">
+      Fats
+    </label>
+
+    <input type="text" id="fats" name="fats" class="form-control" value="<%= @base_ingredient.fats %>">
+  </div>
+
+  <div class="form-group">
+    <label for="carbohydrates">
+      Carbohydrates
+    </label>
+
+    <input type="text" id="carbohydrates" name="carbohydrates" class="form-control" value="<%= @base_ingredient.carbohydrates %>">
+  </div>
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update base ingredient
+  </button>
+</form>
+
+<hr>
+
+<a href="/base_ingredients">
+  Go back
+</a>

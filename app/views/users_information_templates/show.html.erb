@@ -1,0 +1,93 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Users information #<%= @users_information.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/users_informations" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <div class="col">
+        <a href="/users_informations/<%= @users_information.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit users information
+        </a>
+      </div>
+
+    </div>
+
+    <dl>
+      <dt>
+        Email
+      </dt>
+      <dd>
+        <%= @users_information.email %>
+      </dd>
+
+      <dt>
+        Password
+      </dt>
+      <dd>
+        <%= @users_information.password %>
+      </dd>
+
+      <dt>
+        Name
+      </dt>
+      <dd>
+        <%= @users_information.name %>
+      </dd>
+
+      <dt>
+        Weight
+      </dt>
+      <dd>
+        <%= @users_information.weight %>
+      </dd>
+
+      <dt>
+        Height
+      </dt>
+      <dd>
+        <%= @users_information.height %>
+      </dd>
+
+      <dt>
+        Date of birth
+      </dt>
+      <dd>
+        <%= @users_information.date_of_birth %>
+      </dd>
+
+      <dt>
+        Age
+      </dt>
+      <dd>
+        <%= @users_information.age %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@users_information.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@users_information.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <%= render partial: "users_information_templates/users_information_meals" %>
+  </div>
+</div>
