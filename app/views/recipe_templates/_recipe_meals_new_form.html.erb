@@ -1,0 +1,10 @@
+<form action="/create_meal_from_recipe" method="post">
+
+  <input type="hidden" name="eater" value="<%= current_users_information.id %>">
+
+  <input type="hidden" name="food" value="<%= @recipe.id %>">
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create meal
+  </button>
+</form>

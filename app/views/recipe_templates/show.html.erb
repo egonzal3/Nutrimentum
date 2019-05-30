@@ -1,0 +1,209 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Recipe #<%= @recipe.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/recipes" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <div class="col">
+        <a href="/recipes/<%= @recipe.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit recipe
+        </a>
+      </div>
+
+      <div class="col">
+        <a href="/delete_recipe/<%= @recipe.id %>" class="btn btn-block btn-outline-secondary">
+          Delete recipe
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Ingredient1
+      </dt>
+      <dd>
+        <% if @recipe.ingred1.present? %>
+          <a href="/base_ingredients/<%= @recipe.ingredient1 %>">
+            <%= @recipe.ingred1.name %>
+          </a>
+        <% end %>
+      </dd>
+
+      <dt>
+        Ing1 quant
+      </dt>
+      <dd>
+        <%= @recipe.ing1_quant %>
+      </dd>
+
+      <dt>
+        Ing1 metr
+      </dt>
+      <dd>
+        <%= @recipe.ing1_metr %>
+      </dd>
+
+      <dt>
+        Ingredient2
+      </dt>
+      <dd>
+        <% if @recipe.ingred2.present? %>
+          <a href="/base_ingredients/<%= @recipe.ingredient2 %>">
+            <%= @recipe.ingred2.name %>
+          </a>
+        <% end %>
+      </dd>
+
+      <dt>
+        Ing2 quant
+      </dt>
+      <dd>
+        <%= @recipe.ing2_quant %>
+      </dd>
+
+      <dt>
+        Ing2 metr
+      </dt>
+      <dd>
+        <%= @recipe.ing2_metr %>
+      </dd>
+
+      <dt>
+        Ingredient3
+      </dt>
+      <dd>
+        <% if @recipe.ingred3.present? %>
+          <a href="/base_ingredients/<%= @recipe.ingredient3 %>">
+            <%= @recipe.ingred3.name %>
+          </a>
+        <% end %>
+      </dd>
+
+      <dt>
+        Ing3 quant
+      </dt>
+      <dd>
+        <%= @recipe.ing3_quant %>
+      </dd>
+
+      <dt>
+        Ing3 metr
+      </dt>
+      <dd>
+        <%= @recipe.ing3_metr %>
+      </dd>
+
+      <dt>
+        Ingredient4
+      </dt>
+      <dd>
+        <% if @recipe.ingred4.present? %>
+          <a href="/base_ingredients/<%= @recipe.ingredient4 %>">
+            <%= @recipe.ingred4.name %>
+          </a>
+        <% end %>
+      </dd>
+
+      <dt>
+        Ing4 quant
+      </dt>
+      <dd>
+        <%= @recipe.ing4_quant %>
+      </dd>
+
+      <dt>
+        Ing4 metr
+      </dt>
+      <dd>
+        <%= @recipe.ing4_metr %>
+      </dd>
+
+      <dt>
+        Ingredient5
+      </dt>
+      <dd>
+        <% if @recipe.ingred5.present? %>
+          <a href="/base_ingredients/<%= @recipe.ingredient5 %>">
+            <%= @recipe.ingred5.name %>
+          </a>
+        <% end %>
+      </dd>
+
+      <dt>
+        Ing5 quant
+      </dt>
+      <dd>
+        <%= @recipe.ing5_quant %>
+      </dd>
+
+      <dt>
+        Ing5 metr
+      </dt>
+      <dd>
+        <%= @recipe.ing5_metr %>
+      </dd>
+
+      <dt>
+        Total calories
+      </dt>
+      <dd>
+        <%= @recipe.total_calories %>
+      </dd>
+
+      <dt>
+        Total proteins
+      </dt>
+      <dd>
+        <%= @recipe.total_proteins %>
+      </dd>
+
+      <dt>
+        Total fats
+      </dt>
+      <dd>
+        <%= @recipe.total_fats %>
+      </dd>
+
+      <dt>
+        Total carbohydrates
+      </dt>
+      <dd>
+        <%= @recipe.total_carbohydrates %>
+      </dd>
+
+      <dt>
+        Instructions
+      </dt>
+      <dd>
+        <%= @recipe.instructions %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@recipe.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@recipe.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <%= render partial: "recipe_templates/recipe_meals" %>
+  </div>
+</div>
