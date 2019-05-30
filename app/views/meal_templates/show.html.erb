@@ -1,0 +1,70 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Meal #<%= @meal.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/meals" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <div class="col">
+        <% if current_users_information == @meal.user %>
+          <a href="/meals/<%= @meal.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
+            Edit meal
+          </a>
+        <% end %>
+      </div>
+
+      <div class="col">
+        <% if current_users_information == @meal.user %>
+          <a href="/delete_meal/<%= @meal.id %>" class="btn btn-block btn-sm btn-outline-secondary">
+            Delete meal
+          </a>
+        <% end %>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Eater
+      </dt>
+      <dd>
+        <% if @meal.user.present? %>
+          <a href="/users_informations/<%= @meal.eater %>">
+            <%= @meal.user.email %>
+          </a>
+        <% end %>
+      </dd>
+
+      <dt>
+        Food
+      </dt>
+      <dd>
+        <% if @meal.plate.present? %>
+          <a href="/recipes/<%= @meal.food %>">
+            <%= @meal.plate.ingredient1 %>
+          </a>
+        <% end %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@meal.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@meal.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
