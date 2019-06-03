@@ -1,0 +1,125 @@
+<div class="row mb-3">
+  <div class="col-md-12">
+    <h1>
+      All serving size bfps
+    </h1>
+
+    <a href="/serving_size_bfps/new" class="btn btn-block btn-outline-secondary">
+      Add a new serving size bfp
+    </a>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-3">
+    <%= render partial: "serving_size_bfp_templates/serving_size_bfps_search_form" %>
+  </div>
+</div>
+
+
+
+<hr>
+
+<div class="row mb-3">
+  <div class="col-md-12">
+    <table class="table">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Ndb no
+        </th>
+
+        <th>
+          Serving size
+        </th>
+
+        <th>
+          Serving size uom
+        </th>
+
+        <th>
+          Household serving size
+        </th>
+
+        <th>
+          Household serving size uom
+        </th>
+
+        <th>
+          Preparation state
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @serving_size_bfps.each do |serving_size_bfp| %>
+      <tr>
+        <td>
+          <%= serving_size_bfp.id %>
+        </td>
+
+        <td>
+          <% if serving_size_bfp.product.present? %>
+            <a href="/bfps/<%= serving_size_bfp.product.id %>">
+              <%= serving_size_bfp.product.long_name %>
+            </a>
+          <% end %>
+        </td>
+
+        <td>
+          <%= serving_size_bfp.serving_size %>
+        </td>
+
+        <td>
+          <%= serving_size_bfp.serving_size_uom %>
+        </td>
+
+        <td>
+          <%= serving_size_bfp.household_serving_size %>
+        </td>
+
+        <td>
+          <%= serving_size_bfp.household_serving_size_uom %>
+        </td>
+
+        <td>
+          <%= serving_size_bfp.preparation_state %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(serving_size_bfp.created_at) %> ago
+        </td>
+
+        <td>
+          <%= time_ago_in_words(serving_size_bfp.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/serving_size_bfps/<%= serving_size_bfp.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+
+    <div class="row mb-3">
+      <div class="col-md-12">
+        <%= paginate @serving_size_bfps, theme: "twitter-bootstrap-4" %>
+      </div>
+    </div>
+
+  </div>
+</div>

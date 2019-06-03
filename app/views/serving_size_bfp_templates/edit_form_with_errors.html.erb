@@ -1,0 +1,74 @@
+<% if @serving_size_bfp.errors.any? %>
+  <% @serving_size_bfp.errors.full_messages.each do |message| %>
+    <div class="alert">
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<h1>
+  Edit serving size bfp #<%= @serving_size_bfp.id %>
+</h1>
+
+<hr>
+
+<form action="/update_serving_size_bfp/<%= @serving_size_bfp.id %>" method="post">
+
+  <div class="form-group">
+    <label for="ndb_no">
+      Ndb no
+    </label>
+
+    <%= select_tag(:ndb_no, options_from_collection_for_select(Bfp.all, :id, :long_name, @serving_size_bfp.ndb_no), :class => "form-control") %>
+  </div>
+
+  <div class="form-group">
+    <label for="serving_size">
+      Serving size
+    </label>
+
+    <input type="text" id="serving_size" name="serving_size" class="form-control" value="<%= @serving_size_bfp.serving_size %>">
+  </div>
+
+  <div class="form-group">
+    <label for="serving_size_uom">
+      Serving size uom
+    </label>
+
+    <input type="text" id="serving_size_uom" name="serving_size_uom" class="form-control" value="<%= @serving_size_bfp.serving_size_uom %>">
+  </div>
+
+  <div class="form-group">
+    <label for="household_serving_size">
+      Household serving size
+    </label>
+
+    <input type="text" id="household_serving_size" name="household_serving_size" class="form-control" value="<%= @serving_size_bfp.household_serving_size %>">
+  </div>
+
+  <div class="form-group">
+    <label for="household_serving_size_uom">
+      Household serving size uom
+    </label>
+
+    <input type="text" id="household_serving_size_uom" name="household_serving_size_uom" class="form-control" value="<%= @serving_size_bfp.household_serving_size_uom %>">
+  </div>
+
+  <div class="form-group">
+    <label for="preparation_state">
+      Preparation state
+    </label>
+
+    <input type="text" id="preparation_state" name="preparation_state" class="form-control" value="<%= @serving_size_bfp.preparation_state %>">
+  </div>
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update serving size bfp
+  </button>
+</form>
+
+<hr>
+
+<a href="/serving_size_bfps">
+  Go back
+</a>

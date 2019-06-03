@@ -1,0 +1,90 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Serving size bfp #<%= @serving_size_bfp.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/serving_size_bfps" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <div class="col">
+        <a href="/serving_size_bfps/<%= @serving_size_bfp.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit serving size bfp
+        </a>
+      </div>
+
+      <div class="col">
+        <a href="/delete_serving_size_bfp/<%= @serving_size_bfp.id %>" class="btn btn-block btn-outline-secondary">
+          Delete serving size bfp
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Ndb no
+      </dt>
+      <dd>
+        <% if @serving_size_bfp.product.present? %>
+          <a href="/bfps/<%= @serving_size_bfp.ndb_no %>">
+            <%= @serving_size_bfp.product.long_name %>
+          </a>
+        <% end %>
+      </dd>
+
+      <dt>
+        Serving size
+      </dt>
+      <dd>
+        <%= @serving_size_bfp.serving_size %>
+      </dd>
+
+      <dt>
+        Serving size uom
+      </dt>
+      <dd>
+        <%= @serving_size_bfp.serving_size_uom %>
+      </dd>
+
+      <dt>
+        Household serving size
+      </dt>
+      <dd>
+        <%= @serving_size_bfp.household_serving_size %>
+      </dd>
+
+      <dt>
+        Household serving size uom
+      </dt>
+      <dd>
+        <%= @serving_size_bfp.household_serving_size_uom %>
+      </dd>
+
+      <dt>
+        Preparation state
+      </dt>
+      <dd>
+        <%= @serving_size_bfp.preparation_state %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@serving_size_bfp.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@serving_size_bfp.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+

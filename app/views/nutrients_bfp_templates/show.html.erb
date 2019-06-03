@@ -1,0 +1,90 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Nutrients bfp #<%= @nutrients_bfp.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/nutrients_bfps" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <div class="col">
+        <a href="/nutrients_bfps/<%= @nutrients_bfp.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit nutrients bfp
+        </a>
+      </div>
+
+      <div class="col">
+        <a href="/delete_nutrients_bfp/<%= @nutrients_bfp.id %>" class="btn btn-block btn-outline-secondary">
+          Delete nutrients bfp
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Ndb no
+      </dt>
+      <dd>
+        <% if @nutrients_bfp.product.present? %>
+          <a href="/bfps/<%= @nutrients_bfp.ndb_no %>">
+            <%= @nutrients_bfp.product.long_name %>
+          </a>
+        <% end %>
+      </dd>
+
+      <dt>
+        Nutrient code
+      </dt>
+      <dd>
+        <%= @nutrients_bfp.nutrient_code %>
+      </dd>
+
+      <dt>
+        Nutrient name
+      </dt>
+      <dd>
+        <%= @nutrients_bfp.nutrient_name %>
+      </dd>
+
+      <dt>
+        Derivation code
+      </dt>
+      <dd>
+        <%= @nutrients_bfp.derivation_code %>
+      </dd>
+
+      <dt>
+        Output value
+      </dt>
+      <dd>
+        <%= @nutrients_bfp.output_value %>
+      </dd>
+
+      <dt>
+        Output uom
+      </dt>
+      <dd>
+        <%= @nutrients_bfp.output_uom %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@nutrients_bfp.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@nutrients_bfp.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+

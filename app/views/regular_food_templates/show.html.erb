@@ -1,0 +1,183 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Regular food #<%= @regular_food.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/regular_foods" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <div class="col">
+        <a href="/regular_foods/<%= @regular_food.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit regular food
+        </a>
+      </div>
+
+      <div class="col">
+        <a href="/delete_regular_food/<%= @regular_food.id %>" class="btn btn-block btn-outline-secondary">
+          Delete regular food
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Ndb no
+      </dt>
+      <dd>
+        <%= @regular_food.ndb_no %>
+      </dd>
+
+      <dt>
+        Fdgrp cd
+      </dt>
+      <dd>
+        <%= @regular_food.fdgrp_cd %>
+      </dd>
+
+      <dt>
+        Long desc
+      </dt>
+      <dd>
+        <%= @regular_food.long_desc %>
+      </dd>
+
+      <dt>
+        Shrt desc
+      </dt>
+      <dd>
+        <%= @regular_food.shrt_desc %>
+      </dd>
+
+      <dt>
+        Comname
+      </dt>
+      <dd>
+        <%= @regular_food.comname %>
+      </dd>
+
+      <dt>
+        Manufacname
+      </dt>
+      <dd>
+        <%= @regular_food.manufacname %>
+      </dd>
+
+      <dt>
+        Survey
+      </dt>
+      <dd>
+        <%= @regular_food.survey %>
+      </dd>
+
+      <dt>
+        Ref desc
+      </dt>
+      <dd>
+        <%= @regular_food.ref_desc %>
+      </dd>
+
+      <dt>
+        Refuse
+      </dt>
+      <dd>
+        <%= @regular_food.refuse %>
+      </dd>
+
+      <dt>
+        Sciname
+      </dt>
+      <dd>
+        <%= @regular_food.sciname %>
+      </dd>
+
+      <dt>
+        N factor
+      </dt>
+      <dd>
+        <%= @regular_food.n_factor %>
+      </dd>
+
+      <dt>
+        Pro factor
+      </dt>
+      <dd>
+        <%= @regular_food.pro_factor %>
+      </dd>
+
+      <dt>
+        Fat factor
+      </dt>
+      <dd>
+        <%= @regular_food.fat_factor %>
+      </dd>
+
+      <dt>
+        Cho factor
+      </dt>
+      <dd>
+        <%= @regular_food.cho_factor %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@regular_food.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@regular_food.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <%= render partial: "regular_food_templates/regular_food_nut_data_foods" %>
+  </div>
+</div>
+
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <%= render partial: "regular_food_templates/regular_food_meals" %>
+  </div>
+</div>
+
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <%= render partial: "regular_food_templates/regular_food_recipes" %>
+  </div>
+</div>
+
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <%= render partial: "regular_food_templates/regular_food_recipes4" %>
+  </div>
+</div>
+
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <%= render partial: "regular_food_templates/regular_food_recipes3" %>
+  </div>
+</div>
+
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <%= render partial: "regular_food_templates/regular_food_recipes2" %>
+  </div>
+</div>
+
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <%= render partial: "regular_food_templates/regular_food_recipes1" %>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Meals
+
+    <a data-toggle="collapse" href="#bfp_meals_new_form">
+      Add meal
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @bfp.meals.each do |meal| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <a href="/meals/<%= meal.id %>">
+          <%= meal.eater %>
+        </a>
+
+        <%if current_user == meal.user %>
+          <a href="/delete_meal_from_bfp/<%= meal.id %>">
+            Delete
+          </a>
+        <% end %>
+
+      </li>
+    <% end %>
+
+    <div class="card-footer">
+      <div class="collapse" id="bfp_meals_new_form">
+        <%= render partial: "bfp_templates/bfp_meals_new_form" %>
+      </div>
+    </div>
+
+  </ul>
+</div>

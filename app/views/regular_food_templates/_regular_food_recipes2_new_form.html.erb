@@ -1,0 +1,160 @@
+<form action="/create_recipe_from_regular_food" method="post">
+
+  <div class="form-group">
+    <label for="ingredient1">
+      Ingredient1
+    </label>
+
+    <input type="text" id="ingredient1" name="ingredient1" class="form-control" value="<%= @recipe.ingredient1 %>">
+  </div>
+
+  <div class="form-group">
+    <label for="ing1_quant">
+      Ing1 quant
+    </label>
+
+    <input type="text" id="ing1_quant" name="ing1_quant" class="form-control" value="<%= @recipe.ing1_quant %>">
+  </div>
+
+  <div class="form-group">
+    <label for="ing1_metr">
+      Ing1 metr
+    </label>
+
+    <input type="text" id="ing1_metr" name="ing1_metr" class="form-control" value="<%= @recipe.ing1_metr %>">
+  </div>
+
+  <input type="hidden" name="ingredient2" value="<%= @regular_food.id %>">
+
+  <div class="form-group">
+    <label for="ing2_quant">
+      Ing2 quant
+    </label>
+
+    <input type="text" id="ing2_quant" name="ing2_quant" class="form-control" value="<%= @recipe.ing2_quant %>">
+  </div>
+
+  <div class="form-group">
+    <label for="ing2_metr">
+      Ing2 metr
+    </label>
+
+    <input type="text" id="ing2_metr" name="ing2_metr" class="form-control" value="<%= @recipe.ing2_metr %>">
+  </div>
+
+  <div class="form-group">
+    <label for="ingredient3">
+      Ingredient3
+    </label>
+
+    <input type="text" id="ingredient3" name="ingredient3" class="form-control" value="<%= @recipe.ingredient3 %>">
+  </div>
+
+  <div class="form-group">
+    <label for="ing3_quant">
+      Ing3 quant
+    </label>
+
+    <input type="text" id="ing3_quant" name="ing3_quant" class="form-control" value="<%= @recipe.ing3_quant %>">
+  </div>
+
+  <div class="form-group">
+    <label for="ing3_metr">
+      Ing3 metr
+    </label>
+
+    <input type="text" id="ing3_metr" name="ing3_metr" class="form-control" value="<%= @recipe.ing3_metr %>">
+  </div>
+
+  <div class="form-group">
+    <label for="ingredient4">
+      Ingredient4
+    </label>
+
+    <input type="text" id="ingredient4" name="ingredient4" class="form-control" value="<%= @recipe.ingredient4 %>">
+  </div>
+
+  <div class="form-group">
+    <label for="ing4_quant">
+      Ing4 quant
+    </label>
+
+    <input type="text" id="ing4_quant" name="ing4_quant" class="form-control" value="<%= @recipe.ing4_quant %>">
+  </div>
+
+  <div class="form-group">
+    <label for="ing4_metr">
+      Ing4 metr
+    </label>
+
+    <input type="text" id="ing4_metr" name="ing4_metr" class="form-control" value="<%= @recipe.ing4_metr %>">
+  </div>
+
+  <div class="form-group">
+    <label for="ingredient5">
+      Ingredient5
+    </label>
+
+    <input type="text" id="ingredient5" name="ingredient5" class="form-control" value="<%= @recipe.ingredient5 %>">
+  </div>
+
+  <div class="form-group">
+    <label for="ing5_quant">
+      Ing5 quant
+    </label>
+
+    <input type="text" id="ing5_quant" name="ing5_quant" class="form-control" value="<%= @recipe.ing5_quant %>">
+  </div>
+
+  <div class="form-group">
+    <label for="ing5_metr">
+      Ing5 metr
+    </label>
+
+    <input type="text" id="ing5_metr" name="ing5_metr" class="form-control" value="<%= @recipe.ing5_metr %>">
+  </div>
+
+  <div class="form-group">
+    <label for="total_calories">
+      Total calories
+    </label>
+
+    <input type="text" id="total_calories" name="total_calories" class="form-control" value="<%= @recipe.total_calories %>">
+  </div>
+
+  <div class="form-group">
+    <label for="total_proteins">
+      Total proteins
+    </label>
+
+    <input type="text" id="total_proteins" name="total_proteins" class="form-control" value="<%= @recipe.total_proteins %>">
+  </div>
+
+  <div class="form-group">
+    <label for="total_fats">
+      Total fats
+    </label>
+
+    <input type="text" id="total_fats" name="total_fats" class="form-control" value="<%= @recipe.total_fats %>">
+  </div>
+
+  <div class="form-group">
+    <label for="total_carbohydrates">
+      Total carbohydrates
+    </label>
+
+    <input type="text" id="total_carbohydrates" name="total_carbohydrates" class="form-control" value="<%= @recipe.total_carbohydrates %>">
+  </div>
+
+  <div class="form-group">
+    <label for="instructions">
+      Instructions
+    </label>
+
+    <textarea id="instructions" name="instructions" class="form-control" rows="3"><%= @recipe.instructions %></textarea>
+  </div>
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create recipe
+  </button>
+</form>

@@ -1,0 +1,185 @@
+<div class="row mb-3">
+  <div class="col-md-12">
+    <h1>
+      All regular foods
+    </h1>
+
+    <a href="/regular_foods/new" class="btn btn-block btn-outline-secondary">
+      Add a new regular food
+    </a>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-3">
+    <%= render partial: "regular_food_templates/regular_foods_search_form" %>
+  </div>
+</div>
+
+
+
+<hr>
+
+<div class="row mb-3">
+  <div class="col-md-12">
+    <table class="table">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Ndb no
+        </th>
+
+        <th>
+          Fdgrp cd
+        </th>
+
+        <th>
+          Long desc
+        </th>
+
+        <th>
+          Shrt desc
+        </th>
+
+        <th>
+          Comname
+        </th>
+
+        <th>
+          Manufacname
+        </th>
+
+        <th>
+          Survey
+        </th>
+
+        <th>
+          Ref desc
+        </th>
+
+        <th>
+          Refuse
+        </th>
+
+        <th>
+          Sciname
+        </th>
+
+        <th>
+          N factor
+        </th>
+
+        <th>
+          Pro factor
+        </th>
+
+        <th>
+          Fat factor
+        </th>
+
+        <th>
+          Cho factor
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @regular_foods.each do |regular_food| %>
+      <tr>
+        <td>
+          <%= regular_food.id %>
+        </td>
+
+        <td>
+          <%= regular_food.ndb_no %>
+        </td>
+
+        <td>
+          <%= regular_food.fdgrp_cd %>
+        </td>
+
+        <td>
+          <%= regular_food.long_desc %>
+        </td>
+
+        <td>
+          <%= regular_food.shrt_desc %>
+        </td>
+
+        <td>
+          <%= regular_food.comname %>
+        </td>
+
+        <td>
+          <%= regular_food.manufacname %>
+        </td>
+
+        <td>
+          <%= regular_food.survey %>
+        </td>
+
+        <td>
+          <%= regular_food.ref_desc %>
+        </td>
+
+        <td>
+          <%= regular_food.refuse %>
+        </td>
+
+        <td>
+          <%= regular_food.sciname %>
+        </td>
+
+        <td>
+          <%= regular_food.n_factor %>
+        </td>
+
+        <td>
+          <%= regular_food.pro_factor %>
+        </td>
+
+        <td>
+          <%= regular_food.fat_factor %>
+        </td>
+
+        <td>
+          <%= regular_food.cho_factor %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(regular_food.created_at) %> ago
+        </td>
+
+        <td>
+          <%= time_ago_in_words(regular_food.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/regular_foods/<%= regular_food.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+
+    <div class="row mb-3">
+      <div class="col-md-12">
+        <%= paginate @regular_foods, theme: "twitter-bootstrap-4" %>
+      </div>
+    </div>
+
+  </div>
+</div>

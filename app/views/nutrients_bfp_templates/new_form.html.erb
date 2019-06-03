@@ -1,0 +1,67 @@
+<h1>
+  Add a new nutrients bfp
+</h1>
+
+
+<hr>
+
+<form action="/create_nutrients_bfp" method="post">
+
+  <div class="form-group">
+    <label for="ndb_no">
+      Ndb no
+    </label>
+
+    <%= select_tag(:ndb_no, options_from_collection_for_select(Bfp.all, :id, :long_name, @nutrients_bfp.ndb_no), :class => "form-control") %>
+  </div>
+
+  <div class="form-group">
+    <label for="nutrient_code">
+      Nutrient code
+    </label>
+
+    <input type="text" id="nutrient_code" name="nutrient_code" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="nutrient_name">
+      Nutrient name
+    </label>
+
+    <input type="text" id="nutrient_name" name="nutrient_name" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="derivation_code">
+      Derivation code
+    </label>
+
+    <input type="text" id="derivation_code" name="derivation_code" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="output_value">
+      Output value
+    </label>
+
+    <input type="text" id="output_value" name="output_value" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="output_uom">
+      Output uom
+    </label>
+
+    <input type="text" id="output_uom" name="output_uom" class="form-control">
+  </div>
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create nutrients bfp
+  </button>
+</form>
+
+<hr>
+
+<a href="/nutrients_bfps">
+  Go back
+</a>

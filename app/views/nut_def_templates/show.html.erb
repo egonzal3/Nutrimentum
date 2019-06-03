@@ -1,0 +1,84 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Nut def #<%= @nut_def.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/nut_defs" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <div class="col">
+        <a href="/nut_defs/<%= @nut_def.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit nut def
+        </a>
+      </div>
+
+      <div class="col">
+        <a href="/delete_nut_def/<%= @nut_def.id %>" class="btn btn-block btn-outline-secondary">
+          Delete nut def
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Units
+      </dt>
+      <dd>
+        <%= @nut_def.units %>
+      </dd>
+
+      <dt>
+        Tagname
+      </dt>
+      <dd>
+        <%= @nut_def.tagname %>
+      </dd>
+
+      <dt>
+        Nutrdesc
+      </dt>
+      <dd>
+        <%= @nut_def.nutrdesc %>
+      </dd>
+
+      <dt>
+        Num dec
+      </dt>
+      <dd>
+        <%= @nut_def.num_dec %>
+      </dd>
+
+      <dt>
+        Sr order
+      </dt>
+      <dd>
+        <%= @nut_def.sr_order %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@nut_def.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@nut_def.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <%= render partial: "nut_def_templates/nut_def_nut_data_foods" %>
+  </div>
+</div>

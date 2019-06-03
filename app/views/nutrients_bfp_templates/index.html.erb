@@ -1,0 +1,125 @@
+<div class="row mb-3">
+  <div class="col-md-12">
+    <h1>
+      All nutrients bfps
+    </h1>
+
+    <a href="/nutrients_bfps/new" class="btn btn-block btn-outline-secondary">
+      Add a new nutrients bfp
+    </a>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-3">
+    <%= render partial: "nutrients_bfp_templates/nutrients_bfps_search_form" %>
+  </div>
+</div>
+
+
+
+<hr>
+
+<div class="row mb-3">
+  <div class="col-md-12">
+    <table class="table">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Ndb no
+        </th>
+
+        <th>
+          Nutrient code
+        </th>
+
+        <th>
+          Nutrient name
+        </th>
+
+        <th>
+          Derivation code
+        </th>
+
+        <th>
+          Output value
+        </th>
+
+        <th>
+          Output uom
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @nutrients_bfps.each do |nutrients_bfp| %>
+      <tr>
+        <td>
+          <%= nutrients_bfp.id %>
+        </td>
+
+        <td>
+          <% if nutrients_bfp.product.present? %>
+            <a href="/bfps/<%= nutrients_bfp.product.id %>">
+              <%= nutrients_bfp.product.long_name %>
+            </a>
+          <% end %>
+        </td>
+
+        <td>
+          <%= nutrients_bfp.nutrient_code %>
+        </td>
+
+        <td>
+          <%= nutrients_bfp.nutrient_name %>
+        </td>
+
+        <td>
+          <%= nutrients_bfp.derivation_code %>
+        </td>
+
+        <td>
+          <%= nutrients_bfp.output_value %>
+        </td>
+
+        <td>
+          <%= nutrients_bfp.output_uom %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(nutrients_bfp.created_at) %> ago
+        </td>
+
+        <td>
+          <%= time_ago_in_words(nutrients_bfp.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/nutrients_bfps/<%= nutrients_bfp.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+
+    <div class="row mb-3">
+      <div class="col-md-12">
+        <%= paginate @nutrients_bfps, theme: "twitter-bootstrap-4" %>
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,99 @@
+<%= search_form_for @q, :class => collapse_search_form, :id => "bfps_filters" do |f| %>
+  <p class="lead">Narrow results:</p>
+
+  <div class="form-group">
+    <%= f.label :long_name_cont, "Long name contains" %>
+    <%= f.text_field :long_name_cont, :class => "form-control", :placeholder => "Long name contains" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :ndb_no, "Ndb no" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <%= f.text_field :ndb_no_gteq, :class => "form-control", :placeholder => "Ndb no greater than or equal to" %>
+      </div>
+      <div class='col-md-6'>
+        <%= f.text_field :ndb_no_lteq, :class => "form-control", :placeholder => "Ndb no less than or equal to" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :ingredients_english_cont, "Ingredients english contains" %>
+    <%= f.text_field :ingredients_english_cont, :class => "form-control", :placeholder => "Ingredients english contains" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :manufacturer_cont, "Manufacturer contains" %>
+    <%= f.text_field :manufacturer_cont, :class => "form-control", :placeholder => "Manufacturer contains" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :gtin_upc, "Gtin upc" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <%= f.text_field :gtin_upc_gteq, :class => "form-control", :placeholder => "Gtin upc greater than or equal to" %>
+      </div>
+      <div class='col-md-6'>
+        <%= f.text_field :gtin_upc_lteq, :class => "form-control", :placeholder => "Gtin upc less than or equal to" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :data_source_cont, "Data source contains" %>
+    <%= f.text_field :data_source_cont, :class => "form-control", :placeholder => "Data source contains" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :created_at, "Created at" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <div class='input-group date' id='created_atgteqPicker' data-target-input="nearest">
+          <%= f.text_field :created_at_gteq, :class => "form-control datetimepicker-input", :placeholder => "Created at greater than or equal to", :data => {:target => '#created_atgteqPicker'} %>
+          <div class="input-group-append" data-target='#created_atgteqPicker' data-toggle="datetimepicker">
+            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+          </div>
+        </div>
+      </div>
+
+      <div class='col-md-6'>
+        <div class='input-group date' id='created_atlteqPicker' data-target-input="nearest">
+          <%= f.text_field :created_at_lteq, :class => "form-control datetimepicker-input", :placeholder => "Created at less than or equal to", :data => {:target => '#created_atlteqPicker'} %>
+          <div class="input-group-append" data-target='#created_atlteqPicker' data-toggle="datetimepicker">
+            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+      $(function () {
+          $('#created_atgteqPicker').datetimepicker({
+              format: 'YYYY-MM-DD hh:mm:SS'
+          });
+          $('#created_atlteqPicker').datetimepicker({
+              useCurrent: false,
+              format: 'YYYY-MM-DD hh:mm:SS'
+          });
+          $('#created_atgteqPicker').on("dp.change", function (e) {
+              $('#created_atlteqPicker').data("DateTimePicker").minDate(e.date);
+          });
+          $('#created_atlteqPicker').on("dp.change", function (e) {
+              $('#created_atgteqPicker').data("DateTimePicker").maxDate(e.date);
+          });
+      });
+  </script>
+
+
+
+
+  <%= f.submit :class => "btn btn-primary btn-block mb-1" %>
+
+  <a href="/bfps" class="btn btn-outline-secondary btn-block mb-1">Clear filters</a>
+
+<% end %>
+
+<a class="btn btn-outline-secondary btn-block mb-1" data-toggle="collapse" href="#bfps_filters">
+  Show filters
+</a>

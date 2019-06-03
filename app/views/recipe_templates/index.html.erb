@@ -1,0 +1,253 @@
+<div class="row mb-3">
+  <div class="col-md-12">
+    <h1>
+      All recipes
+    </h1>
+
+    <a href="/recipes/new" class="btn btn-block btn-outline-secondary">
+      Add a new recipe
+    </a>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-3">
+    <%= render partial: "recipe_templates/recipes_search_form" %>
+  </div>
+</div>
+
+
+
+<hr>
+
+<div class="row mb-3">
+  <div class="col-md-12">
+    <table class="table">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Ingredient1
+        </th>
+
+        <th>
+          Ing1 quant
+        </th>
+
+        <th>
+          Ing1 metr
+        </th>
+
+        <th>
+          Ingredient2
+        </th>
+
+        <th>
+          Ing2 quant
+        </th>
+
+        <th>
+          Ing2 metr
+        </th>
+
+        <th>
+          Ingredient3
+        </th>
+
+        <th>
+          Ing3 quant
+        </th>
+
+        <th>
+          Ing3 metr
+        </th>
+
+        <th>
+          Ingredient4
+        </th>
+
+        <th>
+          Ing4 quant
+        </th>
+
+        <th>
+          Ing4 metr
+        </th>
+
+        <th>
+          Ingredient5
+        </th>
+
+        <th>
+          Ing5 quant
+        </th>
+
+        <th>
+          Ing5 metr
+        </th>
+
+        <th>
+          Total calories
+        </th>
+
+        <th>
+          Total proteins
+        </th>
+
+        <th>
+          Total fats
+        </th>
+
+        <th>
+          Total carbohydrates
+        </th>
+
+        <th>
+          Instructions
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @recipes.each do |recipe| %>
+      <tr>
+        <td>
+          <%= recipe.id %>
+        </td>
+
+        <td>
+          <% if recipe.ingred1.present? %>
+            <a href="/bfps/<%= recipe.ingred1.id %>">
+              <%= recipe.ingred1.long_name %>
+            </a>
+          <% end %>
+        </td>
+
+        <td>
+          <%= recipe.ing1_quant %>
+        </td>
+
+        <td>
+          <%= recipe.ing1_metr %>
+        </td>
+
+        <td>
+          <% if recipe.ingred2.present? %>
+            <a href="/bfps/<%= recipe.ingred2.id %>">
+              <%= recipe.ingred2.long_name %>
+            </a>
+          <% end %>
+        </td>
+
+        <td>
+          <%= recipe.ing2_quant %>
+        </td>
+
+        <td>
+          <%= recipe.ing2_metr %>
+        </td>
+
+        <td>
+          <% if recipe.ingred3.present? %>
+            <a href="/bfps/<%= recipe.ingred3.id %>">
+              <%= recipe.ingred3.long_name %>
+            </a>
+          <% end %>
+        </td>
+
+        <td>
+          <%= recipe.ing3_quant %>
+        </td>
+
+        <td>
+          <%= recipe.ing3_metr %>
+        </td>
+
+        <td>
+          <% if recipe.ingred4.present? %>
+            <a href="/bfps/<%= recipe.ingred4.id %>">
+              <%= recipe.ingred4.long_name %>
+            </a>
+          <% end %>
+        </td>
+
+        <td>
+          <%= recipe.ing4_quant %>
+        </td>
+
+        <td>
+          <%= recipe.ing4_metr %>
+        </td>
+
+        <td>
+          <% if recipe.ingred5.present? %>
+            <a href="/bfps/<%= recipe.ingred5.id %>">
+              <%= recipe.ingred5.long_name %>
+            </a>
+          <% end %>
+        </td>
+
+        <td>
+          <%= recipe.ing5_quant %>
+        </td>
+
+        <td>
+          <%= recipe.ing5_metr %>
+        </td>
+
+        <td>
+          <%= recipe.total_calories %>
+        </td>
+
+        <td>
+          <%= recipe.total_proteins %>
+        </td>
+
+        <td>
+          <%= recipe.total_fats %>
+        </td>
+
+        <td>
+          <%= recipe.total_carbohydrates %>
+        </td>
+
+        <td>
+          <%= recipe.instructions %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(recipe.created_at) %> ago
+        </td>
+
+        <td>
+          <%= time_ago_in_words(recipe.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/recipes/<%= recipe.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+
+    <div class="row mb-3">
+      <div class="col-md-12">
+        <%= paginate @recipes, theme: "twitter-bootstrap-4" %>
+      </div>
+    </div>
+
+  </div>
+</div>

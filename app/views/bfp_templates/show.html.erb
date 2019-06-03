@@ -1,0 +1,133 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Bfp #<%= @bfp.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/bfps" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <div class="col">
+        <a href="/bfps/<%= @bfp.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit bfp
+        </a>
+      </div>
+
+      <div class="col">
+        <a href="/delete_bfp/<%= @bfp.id %>" class="btn btn-block btn-outline-secondary">
+          Delete bfp
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Long name
+      </dt>
+      <dd>
+        <%= @bfp.long_name %>
+      </dd>
+
+      <dt>
+        Data source
+      </dt>
+      <dd>
+        <%= @bfp.data_source %>
+      </dd>
+
+      <dt>
+        Gtin upc
+      </dt>
+      <dd>
+        <%= @bfp.gtin_upc %>
+      </dd>
+
+      <dt>
+        Manufacturer
+      </dt>
+      <dd>
+        <%= @bfp.manufacturer %>
+      </dd>
+
+      <dt>
+        Ingredients english
+      </dt>
+      <dd>
+        <%= @bfp.ingredients_english %>
+      </dd>
+
+      <dt>
+        Ndb no
+      </dt>
+      <dd>
+        <%= @bfp.ndb_no %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@bfp.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@bfp.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <%= render partial: "bfp_templates/bfp_recipes" %>
+  </div>
+</div>
+
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <%= render partial: "bfp_templates/bfp_recip2" %>
+  </div>
+</div>
+
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <%= render partial: "bfp_templates/bfp_recip3" %>
+  </div>
+</div>
+
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <%= render partial: "bfp_templates/bfp_recip4" %>
+  </div>
+</div>
+
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <%= render partial: "bfp_templates/bfp_recip5" %>
+  </div>
+</div>
+
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <%= render partial: "bfp_templates/bfp_nutrients_bfps" %>
+  </div>
+</div>
+
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <%= render partial: "bfp_templates/bfp_meals" %>
+  </div>
+</div>
+
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <%= render partial: "bfp_templates/bfp_serving_size_bfps" %>
+  </div>
+</div>

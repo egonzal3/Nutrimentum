@@ -1,0 +1,42 @@
+<h1>
+  Edit nut data food #<%= @nut_data_food.id %>
+</h1>
+
+<hr>
+
+<form action="/update_nut_data_food/<%= @nut_data_food.id %>" method="post">
+
+  <div class="form-group">
+    <label for="ndb_no">
+      Ndb no
+    </label>
+
+    <%= select_tag(:ndb_no, options_from_collection_for_select(RegularFood.all, :id, :ndb_no, @nut_data_food.ndb_no), :class => "form-control") %>
+  </div>
+
+  <div class="form-group">
+    <label for="nutr_no">
+      Nutr no
+    </label>
+
+    <%= select_tag(:nutr_no, options_from_collection_for_select(NutDef.all, :id, :units, @nut_data_food.nutr_no), :class => "form-control") %>
+  </div>
+
+  <div class="form-group">
+    <label for="nutr_val">
+      Nutr val
+    </label>
+
+    <input type="text" id="nutr_val" name="nutr_val" class="form-control" value="<%= @nut_data_food.nutr_val %>">
+  </div>
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update nut data food
+  </button>
+</form>
+
+<hr>
+
+<a href="/nut_data_foods">
+  Go back
+</a>

@@ -1,0 +1,33 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Meals
+
+    <a data-toggle="collapse" href="#regular_food_meals_new_form">
+      Add meal
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @regular_food.meals.each do |meal| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <a href="/meals/<%= meal.id %>">
+          <%= meal.eater %>
+        </a>
+
+        <%if current_user == meal.user %>
+          <a href="/delete_meal_from_regular_food/<%= meal.id %>">
+            Delete
+          </a>
+        <% end %>
+
+      </li>
+    <% end %>
+
+    <div class="card-footer">
+      <div class="collapse" id="regular_food_meals_new_form">
+        <%= render partial: "regular_food_templates/regular_food_meals_new_form" %>
+      </div>
+    </div>
+
+  </ul>
+</div>

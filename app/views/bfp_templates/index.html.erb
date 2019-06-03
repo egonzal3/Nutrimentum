@@ -1,0 +1,121 @@
+<div class="row mb-3">
+  <div class="col-md-12">
+    <h1>
+      All bfps
+    </h1>
+
+    <a href="/bfps/new" class="btn btn-block btn-outline-secondary">
+      Add a new bfp
+    </a>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-3">
+    <%= render partial: "bfp_templates/bfps_search_form" %>
+  </div>
+</div>
+
+
+
+<hr>
+
+<div class="row mb-3">
+  <div class="col-md-12">
+    <table class="table">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Long name
+        </th>
+
+        <th>
+          Data source
+        </th>
+
+        <th>
+          Gtin upc
+        </th>
+
+        <th>
+          Manufacturer
+        </th>
+
+        <th>
+          Ingredients english
+        </th>
+
+        <th>
+          Ndb no
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @bfps.each do |bfp| %>
+      <tr>
+        <td>
+          <%= bfp.id %>
+        </td>
+
+        <td>
+          <%= bfp.long_name %>
+        </td>
+
+        <td>
+          <%= bfp.data_source %>
+        </td>
+
+        <td>
+          <%= bfp.gtin_upc %>
+        </td>
+
+        <td>
+          <%= bfp.manufacturer %>
+        </td>
+
+        <td>
+          <%= bfp.ingredients_english %>
+        </td>
+
+        <td>
+          <%= bfp.ndb_no %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(bfp.created_at) %> ago
+        </td>
+
+        <td>
+          <%= time_ago_in_words(bfp.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/bfps/<%= bfp.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+
+    <div class="row mb-3">
+      <div class="col-md-12">
+        <%= paginate @bfps, theme: "twitter-bootstrap-4" %>
+      </div>
+    </div>
+
+  </div>
+</div>
