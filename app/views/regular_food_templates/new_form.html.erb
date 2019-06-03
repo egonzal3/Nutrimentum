@@ -1,0 +1,131 @@
+<h1>
+  Add a new regular food
+</h1>
+
+
+<hr>
+
+<form action="/create_regular_food" method="post">
+
+  <div class="form-group">
+    <label for="ndb_no">
+      Ndb no
+    </label>
+
+    <input type="text" id="ndb_no" name="ndb_no" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="fdgrp_cd">
+      Fdgrp cd
+    </label>
+
+    <input type="text" id="fdgrp_cd" name="fdgrp_cd" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="long_desc">
+      Long desc
+    </label>
+
+    <textarea id="long_desc" name="long_desc" class="form-control" rows="3"></textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="shrt_desc">
+      Shrt desc
+    </label>
+
+    <input type="text" id="shrt_desc" name="shrt_desc" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="comname">
+      Comname
+    </label>
+
+    <textarea id="comname" name="comname" class="form-control" rows="3"></textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="manufacname">
+      Manufacname
+    </label>
+
+    <textarea id="manufacname" name="manufacname" class="form-control" rows="3"></textarea>
+  </div>
+
+  <div class="form-check">
+    <input type="hidden" value="0" name="survey">
+    <input id="survey" class="form-check-input" name="survey" type="checkbox">
+    <label for="survey" class="form-check-label">
+      Survey
+    </label>
+  </div>
+
+  <div class="form-group">
+    <label for="ref_desc">
+      Ref desc
+    </label>
+
+    <textarea id="ref_desc" name="ref_desc" class="form-control" rows="3"></textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="refuse">
+      Refuse
+    </label>
+
+    <input type="text" id="refuse" name="refuse" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="sciname">
+      Sciname
+    </label>
+
+    <textarea id="sciname" name="sciname" class="form-control" rows="3"></textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="n_factor">
+      N factor
+    </label>
+
+    <input type="text" id="n_factor" name="n_factor" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="pro_factor">
+      Pro factor
+    </label>
+
+    <input type="text" id="pro_factor" name="pro_factor" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="fat_factor">
+      Fat factor
+    </label>
+
+    <input type="text" id="fat_factor" name="fat_factor" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="cho_factor">
+      Cho factor
+    </label>
+
+    <input type="text" id="cho_factor" name="cho_factor" class="form-control">
+  </div>
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create regular food
+  </button>
+</form>
+
+<hr>
+
+<a href="/regular_foods">
+  Go back
+</a>

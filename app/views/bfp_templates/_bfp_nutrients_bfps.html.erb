@@ -1,0 +1,31 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Nutrients Bfps
+
+    <a data-toggle="collapse" href="#bfp_nutrients_bfps_new_form">
+      Add nutrients bfp
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @bfp.nutrients_bfps.each do |nutrients_bfp| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <a href="/nutrients_bfps/<%= nutrients_bfp.id %>">
+          <%= nutrients_bfp.ndb_no %>
+        </a>
+
+        <a href="/delete_nutrients_bfp_from_product/<%= nutrients_bfp.id %>">
+          Delete
+        </a>
+
+      </li>
+    <% end %>
+
+    <div class="card-footer">
+      <div class="collapse" id="bfp_nutrients_bfps_new_form">
+        <%= render partial: "bfp_templates/bfp_nutrients_bfps_new_form" %>
+      </div>
+    </div>
+
+  </ul>
+</div>

@@ -1,0 +1,74 @@
+<% if @bfp.errors.any? %>
+  <% @bfp.errors.full_messages.each do |message| %>
+    <div class="alert">
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<h1>
+  Edit bfp #<%= @bfp.id %>
+</h1>
+
+<hr>
+
+<form action="/update_bfp/<%= @bfp.id %>" method="post">
+
+  <div class="form-group">
+    <label for="long_name">
+      Long name
+    </label>
+
+    <input type="text" id="long_name" name="long_name" class="form-control" value="<%= @bfp.long_name %>">
+  </div>
+
+  <div class="form-group">
+    <label for="data_source">
+      Data source
+    </label>
+
+    <input type="text" id="data_source" name="data_source" class="form-control" value="<%= @bfp.data_source %>">
+  </div>
+
+  <div class="form-group">
+    <label for="gtin_upc">
+      Gtin upc
+    </label>
+
+    <input type="text" id="gtin_upc" name="gtin_upc" class="form-control" value="<%= @bfp.gtin_upc %>">
+  </div>
+
+  <div class="form-group">
+    <label for="manufacturer">
+      Manufacturer
+    </label>
+
+    <input type="text" id="manufacturer" name="manufacturer" class="form-control" value="<%= @bfp.manufacturer %>">
+  </div>
+
+  <div class="form-group">
+    <label for="ingredients_english">
+      Ingredients english
+    </label>
+
+    <textarea id="ingredients_english" name="ingredients_english" class="form-control" rows="3"><%= @bfp.ingredients_english %></textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="ndb_no">
+      Ndb no
+    </label>
+
+    <input type="text" id="ndb_no" name="ndb_no" class="form-control" value="<%= @bfp.ndb_no %>">
+  </div>
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update bfp
+  </button>
+</form>
+
+<hr>
+
+<a href="/bfps">
+  Go back
+</a>

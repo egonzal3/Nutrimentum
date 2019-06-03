@@ -1,0 +1,10 @@
+<form action="/create_meal_from_regular_food" method="post">
+
+  <input type="hidden" name="eater" value="<%= current_user.id %>">
+
+    <%= select_tag(:food, options_from_collection_for_select(Bfp.all, :id, :long_name, @meal.food), :class => "form-control") %>
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create meal
+  </button>
+</form>

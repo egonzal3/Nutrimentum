@@ -1,0 +1,73 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Nut data food #<%= @nut_data_food.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/nut_data_foods" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <div class="col">
+        <a href="/nut_data_foods/<%= @nut_data_food.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit nut data food
+        </a>
+      </div>
+
+      <div class="col">
+        <a href="/delete_nut_data_food/<%= @nut_data_food.id %>" class="btn btn-block btn-outline-secondary">
+          Delete nut data food
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Ndb no
+      </dt>
+      <dd>
+        <% if @nut_data_food.product.present? %>
+          <a href="/regular_foods/<%= @nut_data_food.ndb_no %>">
+            <%= @nut_data_food.product.ndb_no %>
+          </a>
+        <% end %>
+      </dd>
+
+      <dt>
+        Nutr no
+      </dt>
+      <dd>
+        <% if @nut_data_food.nutr_fact.present? %>
+          <a href="/nut_defs/<%= @nut_data_food.nutr_no %>">
+            <%= @nut_data_food.nutr_fact.units %>
+          </a>
+        <% end %>
+      </dd>
+
+      <dt>
+        Nutr val
+      </dt>
+      <dd>
+        <%= @nut_data_food.nutr_val %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@nut_data_food.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@nut_data_food.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+

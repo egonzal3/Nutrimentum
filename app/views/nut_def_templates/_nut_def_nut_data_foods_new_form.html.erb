@@ -1,0 +1,24 @@
+<form action="/create_nut_data_food_from_nut_def" method="post">
+
+  <div class="form-group">
+    <label for="ndb_no">
+      Ndb no
+    </label>
+
+    <%= select_tag(:ndb_no, options_from_collection_for_select(RegularFood.all, :id, :ndb_no, @nut_data_food.ndb_no), :class => "form-control") %>
+  </div>
+
+  <input type="hidden" name="nutr_no" value="<%= @nut_def.id %>">
+
+  <div class="form-group">
+    <label for="nutr_val">
+      Nutr val
+    </label>
+
+    <input type="text" id="nutr_val" name="nutr_val" class="form-control" value="<%= @nut_data_food.nutr_val %>">
+  </div>
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create nut data food
+  </button>
+</form>

@@ -1,0 +1,31 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Nut Data Foods
+
+    <a data-toggle="collapse" href="#regular_food_nut_data_foods_new_form">
+      Add nut data food
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @regular_food.nut_data_foods.each do |nut_data_food| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <a href="/nut_data_foods/<%= nut_data_food.id %>">
+          <%= nut_data_food.ndb_no %>
+        </a>
+
+        <a href="/delete_nut_data_food_from_product/<%= nut_data_food.id %>">
+          Delete
+        </a>
+
+      </li>
+    <% end %>
+
+    <div class="card-footer">
+      <div class="collapse" id="regular_food_nut_data_foods_new_form">
+        <%= render partial: "regular_food_templates/regular_food_nut_data_foods_new_form" %>
+      </div>
+    </div>
+
+  </ul>
+</div>
